@@ -1,0 +1,144 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - name: Source
+#   datatype: string
+#   description: The radio name of the source, automatically generated from RA and DEC (Source_Name)
+#   meta: !!omap
+#   - {ucd: ID_MAIN}
+#   - {_votable_string_dtype: char}
+# - name: RAJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:9.5f}'
+#   description: Right ascension (J2000) (RA) (1)
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_MAIN}
+#   - {width: 9}
+#   - {precision: '5'}
+# - name: DEJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:9.5f}'
+#   description: Declination (J2000) (DEC) (1)
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_MAIN}
+#   - {width: 9}
+#   - {precision: '5'}
+# - name: Speak
+#   unit: mJy / beam
+#   datatype: float64
+#   format: '{:9.3f}'
+#   description: The peak Stokes I flux density per beam of the source (Peak_flux)
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_150M}
+#   - {width: 9}
+#   - {precision: '3'}
+# - name: SpeakTot
+#   unit: mJy
+#   datatype: float64
+#   format: '{:9.3f}'
+#   description: The total, integrated Stokes I flux density of the source at the reference frequency (Total_flux)
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_150M}
+#   - {width: 9}
+#   - {precision: '3'}
+# - name: Maj
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:6.2f}'
+#   description: FWHM of the major axis of the source, INCLUDING convolution with the 6-arcsec LOFAR beam (Maj)
+#   meta: !!omap
+#   - {ucd: EXTENSION_DIAM}
+#   - {width: 6}
+#   - {precision: '2'}
+# - name: Min
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:6.2f}'
+#   description: FWHM of the minor axis of the source, INCLUDING convolution with the 6-arcsec LOFAR beam (Min)
+#   meta: !!omap
+#   - {ucd: EXTENSION_MIN}
+#   - {width: 6}
+#   - {precision: '2'}
+# - name: DCMaj
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:6.2f}'
+#   description: The FWHM of the major axis of the source, after de-convolution with the 6-arcsec LOFAR beam (DC_Maj)
+#   meta: !!omap
+#   - {ucd: EXTENSION_FWHM_MAJ}
+#   - {width: 6}
+#   - {precision: '2'}
+# - name: DCMin
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:6.2f}'
+#   description: The FWHM of the minor axis of the source, after de-convolution with the 6-arcsec LOFAR beam (DC_Min)
+#   meta: !!omap
+#   - {ucd: EXTENSION_FWHM_MIN}
+#   - {width: 6}
+#   - {precision: '2'}
+# - name: PA
+#   unit: deg
+#   datatype: float32
+#   format: '{:6.2f}'
+#   description: The position angle of the major axis of the source measured east of north, after de-convolution with the 6-arcsec LOFAR
+#     beam (PA)
+#   meta: !!omap
+#   - {ucd: POS_POS-ANG}
+#   - {width: 6}
+#   - {precision: '2'}
+# - name: DCPA
+#   unit: deg
+#   datatype: float32
+#   format: '{:6.2f}'
+#   description: The position angle of the major axis of the source measured east of north, after de-convolution with the 6-arcsec LOFAR
+#     beam (DC_PA)
+#   meta: !!omap
+#   - {ucd: POS_POS-ANG}
+#   - {width: 6}
+#   - {precision: '2'}
+# - name: Islrms
+#   unit: mJy / beam
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: The average background rms value of the island (Isl_rms)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+# - name: SCode
+#   datatype: string
+#   description: A code that defines the source structure in terms of the fitted Gaussian components (S_Code) (3)
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {_votable_string_dtype: char}
+# - name: Mosaic
+#   datatype: string
+#   description: The name mosaic in which the FITS image can be found (Mosaic_ID)
+#   meta: !!omap
+#   - {ucd: ID_NUMBER}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 11*}
+# - name: Npoint
+#   datatype: uint8
+#   description: The number of pointings that are mosaiced at the position of the source (Number_Pointings)
+#   meta: !!omap
+#   - {ucd: NUMBER}
+#   - {width: 1}
+# - name: MaskFract
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: The fraction of the source that is in the CLEAN mask (Masked_Fraction)
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 6}
+#   - {precision: '3'}
+# meta: !!omap
+# - {ID: J_A_A_659_A1_catalog}
+# - {name: J/A+A/659/A1/catalog}
+# - {description: Raw radio component catalogue of LoTSS-DR2}
+# schema: astropy-2.0
+Source RAJ2000 DEJ2000 Speak SpeakTot Maj Min DCMaj DCMin PA DCPA Islrms SCode Mosaic Npoint MaskFract
+ILTJ111542.40+603409.9 168.92668 60.56944 16.333 1453.909 65.1 48.7 64.82 48.33 165.06 165.06 1.418 M P171+60 3 1.0

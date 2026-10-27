@@ -1,0 +1,146 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - name: FIRST
+#   datatype: string
+#   description: FIRST Source designation (1)
+#   meta: !!omap
+#   - {ucd: ID_MAIN}
+#   - {_votable_string_dtype: char}
+# - name: FITS
+#   datatype: string
+#   description: Get a fully WCS-qualified FITS image of the target
+#   meta: !!omap
+#   - {ucd: DATA_LINK}
+#   - {_votable_string_dtype: char}
+# - name: RAJ2000
+#   datatype: string
+#   description: Right Ascension J2000 (2)
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_MAIN}
+#   - {xtype: hms}
+#   - {_votable_string_dtype: char}
+# - name: DEJ2000
+#   datatype: string
+#   description: Declination J2000 (2)
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_MAIN}
+#   - {xtype: dms}
+#   - {_votable_string_dtype: char}
+# - name: p(S)
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '[0,1] Probability of being a side lobe (3)'
+#   meta: !!omap
+#   - {ucd: STAT_PROBABILITY}
+#   - {width: 6}
+#   - {precision: '3'}
+# - name: Fpeak
+#   unit: mJy
+#   datatype: float64
+#   format: '{:8.2f}'
+#   description: Peak flux density at 1.4GHz (4)
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_1.4G}
+#   - {width: 8}
+#   - {precision: '2'}
+# - name: Fint
+#   unit: mJy
+#   datatype: float64
+#   format: '{:9.2f}'
+#   description: Integrated flux density at 1.4GHz (4)
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_1.4G}
+#   - {width: 9}
+#   - {precision: '2'}
+# - name: Rms
+#   unit: mJy
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: Local noise estimate (5)
+#   meta: !!omap
+#   - {ucd: INST_NOISE}
+#   - {width: 6}
+#   - {precision: '3'}
+# - name: Maj
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:6.2f}'
+#   description: Major axis (FWHM) (6)
+#   meta: !!omap
+#   - {ucd: EXTENSION_FWHM_MAJ}
+#   - {width: 6}
+#   - {precision: '2'}
+# - name: Min
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:6.2f}'
+#   description: Minor axis (FWHM) (6)
+#   meta: !!omap
+#   - {ucd: EXTENSION_FWHM_MIN}
+#   - {width: 6}
+#   - {precision: '2'}
+# - name: PA
+#   unit: deg
+#   datatype: float32
+#   format: '{:5.1f}'
+#   description: '[0/180] Position angle (6)'
+#   meta: !!omap
+#   - {ucd: POS_POS-ANG}
+#   - {width: 5}
+#   - {precision: '1'}
+# - name: N1
+#   datatype: int16
+#   description: '[0/10]? Number of SDSS-DR10 counterparts (9)'
+#   meta: !!omap
+#   - {ucd: ID_IMAGE}
+#   - {width: 2}
+#   - values: {'null': -32768}
+# - name: c1
+#   datatype: string
+#   description: '[sg-] SDSS class: s=star, g=galaxy'
+#   meta: !!omap
+#   - {ucd: CLASS_STAR/GALAXY}
+#   - {_votable_string_dtype: char}
+# - name: N2
+#   datatype: int16
+#   description: Number of 2MASS counterparts (10)
+#   meta: !!omap
+#   - {ucd: ID_IMAGE}
+#   - {width: 2}
+# - name: Ep
+#   unit: yr
+#   datatype: float64
+#   format: '{:8.3f}'
+#   description: Mean epoch of the FIRST flux density (11)
+#   meta: !!omap
+#   - {ucd: TIME_EPOCH}
+#   - {width: 8}
+#   - {precision: '3'}
+# - name: Ep(JD)
+#   unit: d
+#   datatype: float64
+#   format: '{:9.1f}'
+#   description: Mean epoch in Julian Day (11)
+#   meta: !!omap
+#   - {ucd: TIME_EPOCH}
+#   - {width: 9}
+#   - {precision: '1'}
+# - name: s_Ep(JD)
+#   unit: d
+#   datatype: float64
+#   format: '{:8.3f}'
+#   description: Epoch rms (11)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 8}
+#   - {precision: '3'}
+# meta: !!omap
+# - {ID: VIII_92_first14}
+# - {name: VIII/92/first14}
+# - {description: 'The FIRST survey catalog, 14Dec17 Version'}
+# schema: astropy-2.0
+FIRST FITS RAJ2000 DEJ2000 p(S) Fpeak Fint Rms Maj Min PA N1 c1 N2 Ep Ep(JD) s_Ep(JD)
+J111542.7+603352 FITS "11 15 42.706" "+60 33 52.36" 0.016 1.15 3.3 0.14 9.17 5.65 81.9 0 "" 0 2002.518 2452464.6 0.659
+J111543.8+603408 FITS "11 15 43.837" "+60 34 08.42" 0.316 1.13 17.77 0.14 25.78 16.49 66.6 0 "" 0 2002.518 2452464.6 0.689
+J111545.4+603418 FITS "11 15 45.420" "+60 34 18.03" 0.095 1.03 2.55 0.141 10.04 3.26 141.4 1 g 1 2002.518 2452464.6 0.717

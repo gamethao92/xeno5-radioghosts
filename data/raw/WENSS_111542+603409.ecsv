@@ -1,0 +1,83 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - name: Name
+#   datatype: string
+#   description: Designation of the source
+#   meta: !!omap
+#   - {ucd: ID_MAIN}
+#   - {_votable_string_dtype: char}
+# - name: f_Name
+#   datatype: string
+#   description: '[abmp] Several objects share the same name'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {_votable_string_dtype: char}
+# - name: RAJ2000
+#   datatype: string
+#   description: Right Ascension J2000
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_MAIN}
+#   - {xtype: hms}
+#   - {_votable_string_dtype: char}
+# - name: DEJ2000
+#   datatype: string
+#   description: Declination J2000
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_MAIN}
+#   - {xtype: dms}
+#   - {_votable_string_dtype: char}
+# - name: flg1
+#   datatype: string
+#   description: '[SMEC] source type flag'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {_votable_string_dtype: char}
+# - name: flg2
+#   datatype: string
+#   description: '[*] problems in fitting the source'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {_votable_string_dtype: char}
+# - name: Speak
+#   unit: mJy
+#   datatype: int32
+#   description: Peak flux density at 330MHz in mJy/beam
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_325M}
+#   - {width: 6}
+# - name: Sint
+#   unit: mJy
+#   datatype: int32
+#   description: Integrated flux density 330MHz in mJy
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_325M}
+#   - {width: 7}
+# - name: MajAxis
+#   unit: arcsec
+#   datatype: int16
+#   description: Major axis
+#   meta: !!omap
+#   - {ucd: EXTENSION_DIAM}
+#   - {width: 4}
+# - name: MinAxis
+#   unit: arcsec
+#   datatype: int16
+#   description: Minor axis
+#   meta: !!omap
+#   - {ucd: EXTENSION_MIN}
+#   - {width: 3}
+# - name: PA
+#   unit: deg
+#   datatype: int16
+#   description: Position angle (North to East)
+#   meta: !!omap
+#   - {ucd: POS_POS-ANG}
+#   - {width: 3}
+# meta: !!omap
+# - {ID: VIII_62_wenss}
+# - {name: VIII/62/wenss}
+# - {description: Combined table from original tables}
+# schema: astropy-2.0
+Name f_Name RAJ2000 DEJ2000 flg1 flg2 Speak Sint MajAxis MinAxis PA
+B1112.7+6050 "" "11 15 42.65" "+60 34 09.9" S "" 348 567 85 63 174

@@ -55,3 +55,7 @@ uv venv venv-astro && VIRTUAL_ENV=venv-astro uv pip install astroquery scipy
 ```
 
 Generated 2026-10-28 (UTC+7) by an autonomous agent; AI-disclosed.
+
+## Addendum (post-submission vetting, candidate #1)
+
+Low-frequency cones for NVSS J111542+603409 (raw responses in `data/raw/`): VSX 30″ → 0; FIRST 1.4 GHz 60″ → 3 marginal (≈1.1 mJy) peaks nearby; WENSS 325 MHz → Speak 348 / Sint 567 mJy, 85×63″; TGSS 150 MHz → Stotal 1257 mJy; LoTSS 144 MHz → 1454 mJy, DC 64.8×48.3″. Interpretation disclosed: #1 is an *extended* (65″) steep-spectrum radio galaxy — VLASS E1 15 s snapshots are known to lose flux from ≳30″ structures, so resolved-flux loss is a live mundane channel; the vanishing still requires α(1.4→3.0) < −4.6, far beyond radiative-aging cutoffs (≈−1.5), but #1 is best framed as "snapshot-flux-loss suspect / decay monitor", not a confirmed ghost. Compact candidates #2/#4/#5 (MajAxis 28–41″, single-component) are less exposed to this channel.

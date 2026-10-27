@@ -1,0 +1,163 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - name: TGSSADR
+#   datatype: string
+#   description: Name without prefix (JHHMMSS.S+DDMMSS) (1)
+#   meta: !!omap
+#   - {ucd: ID_FIBER}
+#   - {_votable_string_dtype: char}
+# - name: RAJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:9.5f}'
+#   description: Centroid right ascension (J2000)
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_MAIN}
+#   - {width: 9}
+#   - {precision: '5'}
+# - name: e_RAJ2000
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:4.1f}'
+#   description: Uncertainty on right ascension (1 sigma)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 4}
+#   - {precision: '1'}
+# - name: DEJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:9.5f}'
+#   description: Centroid declination (J2000)
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_MAIN}
+#   - {width: 9}
+#   - {precision: '5'}
+# - name: e_DEJ2000
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:4.1f}'
+#   description: Uncertainty on declination (1 sigma)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 4}
+#   - {precision: '1'}
+# - name: Stotal
+#   unit: mJy
+#   datatype: float64
+#   format: '{:9.1f}'
+#   description: Total (integrated) flux density at 150MHz
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_150M}
+#   - {width: 9}
+#   - {precision: '1'}
+# - name: e_Stotal
+#   unit: mJy
+#   datatype: float64
+#   format: '{:8.1f}'
+#   description: Uncertainty on Stotal (1 sigma)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 8}
+#   - {precision: '1'}
+# - name: Speak
+#   unit: mJy / beam
+#   datatype: float64
+#   format: '{:9.1f}'
+#   description: Peak flux at 150MHz
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_150M}
+#   - {width: 9}
+#   - {precision: '1'}
+# - name: e_Speak
+#   unit: mJy / beam
+#   datatype: float64
+#   format: '{:8.1f}'
+#   description: Uncertainty on Speak (1 sigma)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 8}
+#   - {precision: '1'}
+# - name: Maj
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:5.1f}'
+#   description: Gaussian fit major axis
+#   meta: !!omap
+#   - {ucd: EXTENSION_DIAM}
+#   - {width: 5}
+#   - {precision: '1'}
+# - name: e_Maj
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:4.1f}'
+#   description: Uncertainty on Maj (1 sigma)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 4}
+#   - {precision: '1'}
+# - name: Min
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:5.1f}'
+#   description: Gaussian fit minor axis
+#   meta: !!omap
+#   - {ucd: EXTENSION_MIN}
+#   - {width: 5}
+#   - {precision: '1'}
+# - name: e_Min
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:4.1f}'
+#   description: Uncertainty on Min (1 sigma)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 4}
+#   - {precision: '1'}
+# - name: PA
+#   unit: deg
+#   datatype: float32
+#   format: '{:5.1f}'
+#   description: '[] Gaussian fit position angle (2)'
+#   meta: !!omap
+#   - {ucd: POS_POS-ANG}
+#   - {width: 5}
+#   - {precision: '1'}
+# - name: e_PA
+#   unit: deg
+#   datatype: float32
+#   format: '{:4.1f}'
+#   description: Uncertainty on PA (1 sigma)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 4}
+#   - {precision: '1'}
+# - name: Noise
+#   unit: mJy / beam
+#   datatype: float32
+#   format: '{:6.1f}'
+#   description: Local image background RMS noise
+#   meta: !!omap
+#   - {ucd: INST_NOISE}
+#   - {width: 6}
+#   - {precision: '1'}
+# - name: Code
+#   datatype: string
+#   description: '[SCM] Source structure code (S/C/M) (3)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {_votable_string_dtype: char}
+# - name: Mosaic
+#   datatype: string
+#   description: Name of parent mosaic image (4)
+#   meta: !!omap
+#   - {ucd: ID_IMAGE}
+#   - {_votable_string_dtype: char}
+# meta: !!omap
+# - {ID: J_A_A_598_A78_table3}
+# - {name: J/A+A/598/A78/table3}
+# - {description: Full source catalog of TGSS ADR1 150 MHz sources}
+# schema: astropy-2.0
+TGSSADR RAJ2000 e_RAJ2000 DEJ2000 e_DEJ2000 Stotal e_Stotal Speak e_Speak Maj e_Maj Min e_Min PA e_PA Noise Code Mosaic
+J111542.5+603409 168.92725 2.0 60.56929 2.0 1256.7 125.9 225.6 22.7 67.5 0.8 48.8 0.5 -7.0 1.9 2.6 M R18D69
