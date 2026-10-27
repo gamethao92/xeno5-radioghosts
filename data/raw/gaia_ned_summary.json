@@ -1,0 +1,50 @@
+[
+ {
+  "name": "103854+651839",
+  "ra": 159.7252083333333,
+  "dec": 65.31105555555555,
+  "gaia": "1 rows",
+  "allwise": "1 rows",
+  "ned": "3 rows"
+ },
+ {
+  "name": "105604+623038",
+  "ra": 164.01820833333332,
+  "dec": 62.51058333333334,
+  "gaia": "EMPTY",
+  "allwise": "1 rows",
+  "ned": "ERR ReadTimeout: HTTPSConnectionPool(host='ned.ipac.caltech.edu', port=443): Read timed out. (read timeout=60)"
+ },
+ {
+  "name": "111542+603409",
+  "ra": 168.92787499999997,
+  "dec": 60.56919444444445,
+  "gaia": "EMPTY",
+  "allwise": "EMPTY",
+  "ned": "1 rows"
+ },
+ {
+  "name": "111814+635747",
+  "ra": 169.5585833333333,
+  "dec": 63.96311111111111,
+  "gaia": "EMPTY",
+  "allwise": "1 rows",
+  "ned": "ERR ReadTimeout: HTTPSConnectionPool(host='ned.ipac.caltech.edu', port=443): Read timed out. (read timeout=60)"
+ },
+ {
+  "name": "112514+644322",
+  "ra": 171.31016666666665,
+  "dec": 64.72280555555555,
+  "gaia": "EMPTY",
+  "allwise": "EMPTY",
+  "ned": "3 rows"
+ },
+ {
+  "name": "112555+641515",
+  "ra": 171.4797916666666,
+  "dec": 64.25430555555556,
+  "gaia": "EMPTY",
+  "allwise": "1 rows",
+  "ned": "2 rows"
+ }
+]

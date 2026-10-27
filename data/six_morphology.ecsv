@@ -1,0 +1,90 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - name: NVSS
+#   datatype: string
+#   description: Source name (1)
+#   meta: !!omap
+#   - {ucd: ID_MAIN}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 14*}
+# - name: RAJ2000
+#   datatype: string
+#   description: Right Ascension J2000 (2)
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_MAIN}
+#   - {xtype: hms}
+#   - {_votable_string_dtype: char}
+# - name: DEJ2000
+#   datatype: string
+#   description: Declination J2000 (2)
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_MAIN}
+#   - {xtype: dms}
+#   - {_votable_string_dtype: char}
+# - name: S1.4
+#   unit: mJy
+#   datatype: float64
+#   format: '{:8.1f}'
+#   description: Integrated 1.4GHz flux density of radio source
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_1.4G}
+#   - {width: 8}
+#   - {precision: '1'}
+# - name: e_S1.4
+#   unit: mJy
+#   datatype: float32
+#   format: '{:7.1f}'
+#   description: Mean error on S1.4
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 7}
+#   - {precision: '1'}
+# - name: l_MajAxis
+#   datatype: string
+#   description: Limit flag on MajAxis
+#   meta: !!omap
+#   - {ucd: CODE_LIMIT}
+#   - {_votable_string_dtype: char}
+# - name: MajAxis
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:5.1f}'
+#   description: Fitted (deconvolved) major axis of radio source
+#   meta: !!omap
+#   - {ucd: EXTENSION_FWHM_MAJ}
+#   - {width: 5}
+#   - {precision: '1'}
+# - name: l_MinAxis
+#   datatype: string
+#   description: Limit flag on MinAxis
+#   meta: !!omap
+#   - {ucd: CODE_LIMIT}
+#   - {_votable_string_dtype: char}
+# - name: MinAxis
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:5.1f}'
+#   description: Fitted (deconvolved) minor axis of radio source
+#   meta: !!omap
+#   - {ucd: EXTENSION_FWHM_MIN}
+#   - {width: 5}
+#   - {precision: '1'}
+# - name: f_resFlux
+#   datatype: string
+#   description: '[PS* ] Residual Code (3)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {_votable_string_dtype: char}
+# meta: !!omap
+# - {ID: VIII_65_nvss}
+# - {name: VIII/65/nvss}
+# - {description: The NVSS Catalog}
+# schema: astropy-2.0
+NVSS RAJ2000 DEJ2000 S1.4 e_S1.4 l_MajAxis MajAxis l_MinAxis MinAxis f_resFlux
+103854+651839 "10 38 54.05" "+65 18 39.8" 161.7 5.1 "" 71.4 < 19.3 P*
+105604+623038 "10 56 04.37" "+62 30 38.1" 129.3 4.4 "" 29.1 < 15.4 ""
+111542+603409 "11 15 42.69" "+60 34 09.1" 130.6 4.5 "" 64.1 "" 46.8 P*
+111814+635747 "11 18 14.06" "+63 57 47.2" 215.2 7.1 "" 40.5 < 15.9 P*
+112514+644322 "11 25 14.44" "+64 43 22.1" 101.0 3.5 "" 27.7 < 19.9 ""
+112555+641515 "11 25 55.15" "+64 15 15.5" 129.4 4.3 "" 45.1 < 17.0 P*

@@ -1,0 +1,253 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - name: AllWISE
+#   datatype: string
+#   description: WISE All-Sky Release Catalog name, based on J2000 position, <WISEA JHHMMSS.ss+DDMMSS.s> (designation)
+#   meta: !!omap
+#   - {ucd: ID_MAIN}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 19*}
+# - name: RAJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:11.7f}'
+#   description: Right ascension (J2000)
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_MAIN}
+#   - {width: 11}
+#   - {precision: '7'}
+# - name: DEJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:11.7f}'
+#   description: Declination (J2000)
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_MAIN}
+#   - {width: 11}
+#   - {precision: '7'}
+# - name: Im
+#   datatype: string
+#   description: Image of the 4 bands from the IRSA server (IPAC)
+#   meta: !!omap
+#   - {ucd: DATA_LINK}
+#   - {_votable_string_dtype: char}
+# - name: W1mag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? W1 magnitude (3.35um)'
+#   meta: !!omap
+#   - {ucd: PHOT_IR_3.4}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: e_W1mag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Mean error on W1 magnitude'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: W2mag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? W2 magnitude (4.6um)'
+#   meta: !!omap
+#   - {ucd: PHOT_IR_4.2}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: e_W2mag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Mean error on W2 magnitude'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: W3mag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? W3 magnitude (11.6um)'
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_IR_12}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: e_W3mag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Mean error on W3 magnitude'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: W4mag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? W4 magnitude (22.1um)'
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_IR_25}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: e_W4mag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Mean error on W4 magnitude'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: Jmag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? 2MASS J magnitude (1.25um)'
+#   meta: !!omap
+#   - {ucd: PHOT_JHN_J}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: e_Jmag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Mean error on J magnitude'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: Hmag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? 2MASS H magnitude (1.65um)'
+#   meta: !!omap
+#   - {ucd: PHOT_JHN_H}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: e_Hmag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Mean error on H magnitude'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: Kmag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? 2MASS Ks magnitude (2.17um)'
+#   meta: !!omap
+#   - {ucd: PHOT_JHN_K}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: e_Kmag
+#   unit: mag
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Mean error on Ks magnitude'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: ccf
+#   datatype: string
+#   description: '[0DHOPdhop] Contamination and confusion flag, one per band (cc_flags) (2)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {_votable_string_dtype: char}
+# - name: ex
+#   datatype: uint8
+#   description: '[0-5] Extended source flag (ext_flg) (3)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: var
+#   datatype: string
+#   description: Variability flag, one per band (var_flg) (4)
+#   meta: !!omap
+#   - {ucd: CODE_VARIAB}
+#   - {_votable_string_dtype: char}
+# - name: pmRA
+#   unit: mas / yr
+#   datatype: int32
+#   description: '? Apparent motion in RA (9)'
+#   meta: !!omap
+#   - {ucd: POS_PM_NON-EQ}
+#   - {width: 7}
+#   - values: {'null': -2147483648}
+# - name: e_pmRA
+#   unit: mas / yr
+#   datatype: int32
+#   description: '? Mean error on pmRA (9)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 7}
+#   - values: {'null': -2147483648}
+# - name: pmDE
+#   unit: mas / yr
+#   datatype: int32
+#   description: '? Apparent motion in DE (9)'
+#   meta: !!omap
+#   - {ucd: POS_PM_NON-EQ}
+#   - {width: 7}
+#   - values: {'null': -2147483648}
+# - name: e_pmDE
+#   unit: mas / yr
+#   datatype: int32
+#   description: '? Mean error on pmDE (9)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 7}
+#   - values: {'null': -2147483648}
+# - name: qph
+#   datatype: string
+#   description: '[ABCUXZ] Photometric quality flag (8)'
+#   meta: !!omap
+#   - {ucd: CODE_QUALITY}
+#   - {_votable_string_dtype: char}
+# - name: d2M
+#   unit: arcsec
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Distance separating the positions of the WISE source and associated 2MASS PSC source'
+#   meta: !!omap
+#   - {ucd: POS_OFFSET}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: 2M
+#   datatype: string
+#   description: Display the 2MASS data (Cutri et al. 2003, Cat. II/246)
+#   meta: !!omap
+#   - {ucd: DATA_LINK}
+#   - {_votable_string_dtype: char}
+# meta: !!omap
+# - {ID: II_328_allwise}
+# - {name: II/328/allwise}
+# - {description: '*the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)'}
+# schema: astropy-2.0
+AllWISE RAJ2000 DEJ2000 Im W1mag e_W1mag W2mag e_W2mag W3mag e_W3mag W4mag e_W4mag Jmag e_Jmag Hmag e_Hmag Kmag e_Kmag ccf ex var pmRA e_pmRA pmDE e_pmDE qph d2M 2M
+J103853.38+651838.6 159.7224571 65.3107309 Im 16.801 0.074 16.364 0.171 12.914 "" 8.612 "" "" "" "" "" "" "" 0000 0 2nnn 2116 811 1928 874 ABUU "" 2M

@@ -1,0 +1,191 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - name: CompName
+#   datatype: string
+#   description: IAU name of the component, VLASS1QLCIR JHHMMSS.ss+DDMMSS.s (Component) (1)
+#   meta: !!omap
+#   - {ucd: ID_MAIN}
+#   - {_votable_string_dtype: char}
+# - name: CompId
+#   datatype: int16
+#   description: '[-588/218] The PyBDSF ID of the component in the subtile (Component) (2)'
+#   meta: !!omap
+#   - {ucd: ID_NUMBER}
+#   - {width: 4}
+# - name: RAJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:12.8f}'
+#   description: '[0.0/360.0] Right Ascension (J2000) (RA)'
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_MAIN}
+#   - {width: 12}
+#   - {precision: '8'}
+# - name: DEJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:12.8f}'
+#   description: '[-40.02/89.83] Declination (J2000) (DEC)'
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_MAIN}
+#   - {width: 12}
+#   - {precision: '8'}
+# - name: Ftot
+#   unit: mJy
+#   datatype: float64
+#   format: '{:9.3f}'
+#   description: The integrated flux density of the component in the S-band (2-4GHz) (Total_flux) (3)
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_2.7G}
+#   - {width: 9}
+#   - {precision: '3'}
+# - name: e_Ftot
+#   unit: mJy
+#   datatype: float32
+#   format: '{:7.3f}'
+#   description: 1-sigma uncertainty in total flux (E_Total_f) (3)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 7}
+#   - {precision: '3'}
+# - name: Fpeak
+#   unit: mJy / beam
+#   datatype: float64
+#   format: '{:8.3f}'
+#   description: Peak brightness of the component in the S-band (2-4GHz) (Peak_flux) (3)
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_2.7G}
+#   - {width: 8}
+#   - {precision: '3'}
+# - name: e_Fpeak
+#   unit: mJy / beam
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: 1-sigma uncertainty in peak flux (E_Peak_fl) (3)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+# - name: Islrms
+#   unit: mJy / beam
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: Local rms noise of the flux island (Isl_rms)
+#   meta: !!omap
+#   - {ucd: INST_NOISE}
+#   - {width: 6}
+#   - {precision: '3'}
+# - name: SCode
+#   datatype: string
+#   description: '[SCME] Component type (S_Code) (4)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {_votable_string_dtype: char}
+# - name: DCMaj
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:8.4f}'
+#   description: '? Major axis of the component fit after deconvolution from the VLASS beam (DC_Maj) (3)'
+#   meta: !!omap
+#   - {ucd: EXTENSION_DIAM}
+#   - {width: 8}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: DCMin
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:8.4f}'
+#   description: '? Minor axis of the component fit after deconvolution from the VLASS beam (DC_Min) (3)'
+#   meta: !!omap
+#   - {ucd: EXTENSION_MIN}
+#   - {width: 8}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: DCPA
+#   unit: deg
+#   datatype: float64
+#   format: '{:8.4f}'
+#   description: '? Position angle of the component fit after deconvolution from the VLASS beam (DC_PA) (3)'
+#   meta: !!omap
+#   - {ucd: POS_POS-ANG}
+#   - {width: 8}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: Subtile
+#   datatype: string
+#   description: Name of the Subtile the component was detected in (Subtile)
+#   meta: !!omap
+#   - {ucd: ID_FIELD}
+#   - {_votable_string_dtype: char}
+# - name: NVSSdist
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:10.5f}'
+#   description: Angular separation from the nearest NVSS source (NVSS_dist) (6)
+#   meta: !!omap
+#   - {ucd: POS_ANG_DIST_GENERAL}
+#   - {width: 10}
+#   - {precision: '5'}
+# - name: FIRSTdist
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:12.5f}'
+#   description: Angular separation from the nearest FIRST source (FIRST_dis) (7)
+#   meta: !!omap
+#   - {ucd: POS_ANG_DIST_GENERAL}
+#   - {width: 12}
+#   - {precision: '5'}
+# - name: PeakToRing
+#   datatype: float64
+#   format: '{:9.4f}'
+#   description: '? Ratio of maximum brightness within 5" of the component to the maximum brightness in an annulus centred on the component
+#     with inner and outer radii of 5" and 10" (Peak_to_r) (8)'
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RATIO}
+#   - {width: 9}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: DupFlag
+#   datatype: uint8
+#   description: '[0/2] Flag to identify duplicate detections (Duplicate) (9)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: QualFlag
+#   datatype: uint8
+#   description: '[0/7] Flag to denote the Quality of the detection (Quality_f) (10)'
+#   meta: !!omap
+#   - {ucd: CODE_QUALITY}
+#   - {width: 1}
+# - name: NNdist
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:10.5f}'
+#   description: '? Angular separation from nearest other fitted component in the catalog after accounting for duplicates (NN_dist) (3)'
+#   meta: !!omap
+#   - {ucd: POS_ANG_DIST_GENERAL}
+#   - {width: 10}
+#   - {precision: '5'}
+#   - values: {'null': .nan}
+# - name: MainSample
+#   datatype: uint8
+#   description: '[0/1] Part of the main sample used for the scientific analyses presented in the paper (main_samp) (11)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: QLcutout
+#   datatype: string
+#   description: Link to a 3 arcminute square cutout of the component (QL_cutout)
+#   meta: !!omap
+#   - {ucd: DATA_LINK}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 237*}
+# - {name: nvss_sep_arcsec, datatype: float64}
+# meta: !!omap
+# - {ID: J_ApJS_255_30_comp}
+# - {name: J/ApJS/255/30/comp}
+# - {description: Detected components and properties}
+# schema: astropy-2.0
+CompName CompId RAJ2000 DEJ2000 Ftot e_Ftot Fpeak e_Fpeak Islrms SCode DCMaj DCMin DCPA Subtile NVSSdist FIRSTdist PeakToRing DupFlag QualFlag NNdist MainSample QLcutout nvss_sep_arcsec
+"VLASS1QLCIR J113952.55+654801.1" 10 174.96896305 65.80031688 218.144 5.405 75.165 1.065 1.065 M 5.3312 2.6738 118.3297 J113539+653000 19.98692 4534.48975 5.0325 0 0 11.92 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t08.J113539%2B653000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dyjsw3e8aorh5cv21&CIRCLE=174.96896305009557+65.80031687546055+0.025 20.056465952723293

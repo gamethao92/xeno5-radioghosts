@@ -1,0 +1,210 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - name: CompName
+#   datatype: string
+#   description: IAU name of the component, VLASS1QLCIR JHHMMSS.ss+DDMMSS.s (Component) (1)
+#   meta: !!omap
+#   - {ucd: ID_MAIN}
+#   - {_votable_string_dtype: char}
+# - name: CompId
+#   datatype: int16
+#   description: '[-588/218] The PyBDSF ID of the component in the subtile (Component) (2)'
+#   meta: !!omap
+#   - {ucd: ID_NUMBER}
+#   - {width: 4}
+# - name: RAJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:12.8f}'
+#   description: '[0.0/360.0] Right Ascension (J2000) (RA)'
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_MAIN}
+#   - {width: 12}
+#   - {precision: '8'}
+# - name: DEJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:12.8f}'
+#   description: '[-40.02/89.83] Declination (J2000) (DEC)'
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_MAIN}
+#   - {width: 12}
+#   - {precision: '8'}
+# - name: Ftot
+#   unit: mJy
+#   datatype: float64
+#   format: '{:9.3f}'
+#   description: The integrated flux density of the component in the S-band (2-4GHz) (Total_flux) (3)
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_2.7G}
+#   - {width: 9}
+#   - {precision: '3'}
+# - name: e_Ftot
+#   unit: mJy
+#   datatype: float32
+#   format: '{:7.3f}'
+#   description: 1-sigma uncertainty in total flux (E_Total_f) (3)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 7}
+#   - {precision: '3'}
+# - name: Fpeak
+#   unit: mJy / beam
+#   datatype: float64
+#   format: '{:8.3f}'
+#   description: Peak brightness of the component in the S-band (2-4GHz) (Peak_flux) (3)
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RADIO_2.7G}
+#   - {width: 8}
+#   - {precision: '3'}
+# - name: e_Fpeak
+#   unit: mJy / beam
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: 1-sigma uncertainty in peak flux (E_Peak_fl) (3)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+# - name: Islrms
+#   unit: mJy / beam
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: Local rms noise of the flux island (Isl_rms)
+#   meta: !!omap
+#   - {ucd: INST_NOISE}
+#   - {width: 6}
+#   - {precision: '3'}
+# - name: SCode
+#   datatype: string
+#   description: '[SCME] Component type (S_Code) (4)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {_votable_string_dtype: char}
+# - name: DCMaj
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:8.4f}'
+#   description: '? Major axis of the component fit after deconvolution from the VLASS beam (DC_Maj) (3)'
+#   meta: !!omap
+#   - {ucd: EXTENSION_DIAM}
+#   - {width: 8}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: DCMin
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:8.4f}'
+#   description: '? Minor axis of the component fit after deconvolution from the VLASS beam (DC_Min) (3)'
+#   meta: !!omap
+#   - {ucd: EXTENSION_MIN}
+#   - {width: 8}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: DCPA
+#   unit: deg
+#   datatype: float64
+#   format: '{:8.4f}'
+#   description: '? Position angle of the component fit after deconvolution from the VLASS beam (DC_PA) (3)'
+#   meta: !!omap
+#   - {ucd: POS_POS-ANG}
+#   - {width: 8}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: Subtile
+#   datatype: string
+#   description: Name of the Subtile the component was detected in (Subtile)
+#   meta: !!omap
+#   - {ucd: ID_FIELD}
+#   - {_votable_string_dtype: char}
+# - name: NVSSdist
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:10.5f}'
+#   description: Angular separation from the nearest NVSS source (NVSS_dist) (6)
+#   meta: !!omap
+#   - {ucd: POS_ANG_DIST_GENERAL}
+#   - {width: 10}
+#   - {precision: '5'}
+# - name: FIRSTdist
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:12.5f}'
+#   description: Angular separation from the nearest FIRST source (FIRST_dis) (7)
+#   meta: !!omap
+#   - {ucd: POS_ANG_DIST_GENERAL}
+#   - {width: 12}
+#   - {precision: '5'}
+# - name: PeakToRing
+#   datatype: float64
+#   format: '{:9.4f}'
+#   description: '? Ratio of maximum brightness within 5" of the component to the maximum brightness in an annulus centred on the component
+#     with inner and outer radii of 5" and 10" (Peak_to_r) (8)'
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_RATIO}
+#   - {width: 9}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: DupFlag
+#   datatype: uint8
+#   description: '[0/2] Flag to identify duplicate detections (Duplicate) (9)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: QualFlag
+#   datatype: uint8
+#   description: '[0/7] Flag to denote the Quality of the detection (Quality_f) (10)'
+#   meta: !!omap
+#   - {ucd: CODE_QUALITY}
+#   - {width: 1}
+# - name: NNdist
+#   unit: arcsec
+#   datatype: float64
+#   format: '{:10.5f}'
+#   description: '? Angular separation from nearest other fitted component in the catalog after accounting for duplicates (NN_dist) (3)'
+#   meta: !!omap
+#   - {ucd: POS_ANG_DIST_GENERAL}
+#   - {width: 10}
+#   - {precision: '5'}
+#   - values: {'null': .nan}
+# - name: MainSample
+#   datatype: uint8
+#   description: '[0/1] Part of the main sample used for the scientific analyses presented in the paper (main_samp) (11)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: QLcutout
+#   datatype: string
+#   description: Link to a 3 arcminute square cutout of the component (QL_cutout)
+#   meta: !!omap
+#   - {ucd: DATA_LINK}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 237*}
+# meta: !!omap
+# - {ID: J_ApJS_255_30_comp}
+# - {name: J/ApJS/255/30/comp}
+# - {description: Detected components and properties}
+# schema: astropy-2.0
+CompName CompId RAJ2000 DEJ2000 Ftot e_Ftot Fpeak e_Fpeak Islrms SCode DCMaj DCMin DCPA Subtile NVSSdist FIRSTdist PeakToRing DupFlag QualFlag NNdist MainSample QLcutout
+"VLASS1QLCIR J101950.88+632001.5" 17 154.96202949 63.33375951 171.852 1.936 136.309 0.162 0.162 M 3.3792 2.5364 61.1733 J101716+633000 0.76588 0.06469 62.1596 0 0 12.57 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T26t08.J101716%2B633000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dku6c9a91ts8pha94&CIRCLE=154.9620294911654+63.33375951159905+0.025
+"VLASS1QLCIR J102032.31+655121.9" 32 155.13465606 65.85610471 540.364 2.487 141.069 0.229 0.229 M 19.4956 3.4679 151.1621 J101835+653000 0.79586 4648.72801 0.4814 0 0 12.6 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t07.J101835%2B653000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dnee0k4jpjosqsqhi&CIRCLE=155.13465606296322+65.85610471204305+0.025
+"VLASS1QLCIR J102134.80+670607.4" 46 155.39502253 67.10208124 158.483 1.29 121.172 0.191 0.191 M 3.5923 2.0505 146.524 J102204+673000 0.08437 9131.75856 17.9064 0 0 6.44 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t07.J102204%2B673000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dguvccpopycfd0vfh&CIRCLE=155.3950225312815+67.1020812354698+0.025
+"VLASS1QLCIR J102902.79+661450.9" 50 157.26166439 66.24748491 228.148 1.161 196.76 0.258 0.258 M 3.961 0.0 152.588 J103005+663000 1.07215 6236.71029 21.7389 0 0 6.57 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t07.J103005%2B663000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dd7f6n31159xykxoy&CIRCLE=157.26166438594882+66.24748490530601+0.025
+"VLASS1QLCIR J103425.24+652222.0" 53 158.60516898 65.3727999 186.345 1.286 95.679 0.179 0.179 M 4.6654 3.1401 23.6876 J103731+653000 5.81387 3955.91055 12.6916 0 0 17.63 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t07.J103731%2B653000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Ddkb9lumcpk6utgao&CIRCLE=158.6051689762659+65.37279989823939+0.025
+"VLASS1QLCIR J104442.95+671034.2" 25 161.17896646 67.17619161 152.509 0.83 78.237 0.185 0.185 M 3.3329 2.1551 92.6023 J104232+673000 0.57752 10744.43873 25.1369 0 0 9.14 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t07.J104232%2B673000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dv7r99fv59cy52blu&CIRCLE=161.1789664600967+67.17619160652065+0.025
+"VLASS1QLCIR J105232.74+612520.2" 48 163.13642853 61.42229357 478.299 2.593 221.963 0.306 0.306 M 3.5602 3.3424 66.4419 J105222+613000 0.41524 0.2089 33.9401 0 0 8.81 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T26t09.J105222%2B613000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dpd5mbvdgrwjlnl3z&CIRCLE=163.1364285270223+61.42229356861993+0.025
+"VLASS1QLCIR J105553.98+624048.8" 17 163.97491955 62.68024432 171.698 1.096 69.282 0.159 0.159 M 5.7387 2.5132 124.6045 J105246+623000 0.23677 1.10242 4.3503 0 0 11.21 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T26t09.J105246%2B623000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dpd5mbvdgrwjlnl3z&CIRCLE=163.9749195459271+62.680244324372474+0.025
+"VLASS1QLCIR J111013.02+602842.5" 34 167.55427353 60.47848862 391.937 0.762 358.185 0.293 0.293 M 1.302 0.4333 84.3037 J110759+603000 0.74565 0.51972 81.3367 0 0 186.43 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T25t09.J110759%2B603000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dnjrdvznum0je7dlf&CIRCLE=167.554273527314+60.4784886183638+0.025
+"VLASS1QLCIR J111136.18+645038.1" 32 167.90077196 64.84393214 169.945 1.637 104.586 0.211 0.211 M 7.5879 1.6927 78.7463 J111156+643000 7.05856 1186.42791 16.4173 0 0 12.02 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T26t09.J111156%2B643000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dc4x2uh2moe95u3ap&CIRCLE=167.9007719590741+64.84393213566929+0.025
+"VLASS1QLCIR J111237.18+644749.5" 28 168.15495075 64.79710705 190.934 0.884 155.631 0.238 0.238 M 1.9244 0.5331 66.0353 J111156+643000 0.06329 1147.2017 37.1901 0 0 10.76 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T26t09.J111156%2B643000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dc4x2uh2moe95u3ap&CIRCLE=168.15495074744155+64.79710704897128+0.025
+"VLASS1QLCIR J111602.07+610330.2" 57 169.00866017 61.05839716 361.987 2.688 54.585 0.236 0.236 M 12.7738 3.3563 14.2577 J111707+613000 0.68478 4.21961 1.0736 0 0 9.47 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T26t09.J111707%2B613000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dl467qu0o67xh7n51&CIRCLE=169.0086601686362+61.05839716012756+0.025
+"VLASS1QLCIR J111835.07+615425.8" 27 169.64614055 61.90717817 242.612 1.071 149.849 0.203 0.203 M 3.1448 1.9857 115.8333 J111707+613000 0.66838 0.28975 25.9606 0 0 7.24 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T26t09.J111707%2B613000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dl467qu0o67xh7n51&CIRCLE=169.6461405541505+61.907178165449714+0.025
+"VLASS1QLCIR J112810.59+664824.3" 33 172.04413322 66.80677535 182.582 2.408 98.948 0.233 0.233 M 6.5542 4.4336 80.928 J112645+663000 3.02799 8155.71258 3.1551 0 0 8.56 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t08.J112645%2B663000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dmz77lnf62hpbrwr9&CIRCLE=172.04413321782738+66.80677535277626+0.025
+"VLASS1QLCIR J112833.07+684924.8" 46 172.13781453 68.82358173 310.206 2.433 188.421 0.303 0.303 M 5.5505 5.2201 15.3076 J112801+683000 1.89102 15411.2122 13.1521 0 0 8.65 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t08.J112801%2B683000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dkcd2h5p4uplzvdk6&CIRCLE=172.13781452781964+68.82358172646019+0.025
+"VLASS1QLCIR J112836.73+683420.6" 49 172.15305965 68.57239187 157.457 1.407 112.668 0.241 0.241 M 6.015 2.3527 152.2673 J112801+683000 1.66917 14509.12426 18.7311 0 0 7.53 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t08.J112801%2B683000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dkcd2h5p4uplzvdk6&CIRCLE=172.153059652583+68.57239186924022+0.025
+"VLASS1QLCIR J113025.46+662605.5" 8 172.6060868 66.43486491 557.83 2.319 157.347 0.307 0.307 M 12.2913 2.3901 177.4386 J112645+663000 0.24858 6865.78804 0.5689 0 0 7.13 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t08.J112645%2B663000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dmz77lnf62hpbrwr9&CIRCLE=172.6060867979275+66.43486491419168+0.025
+"VLASS1QLCIR J113235.12+632406.5" 6 173.14637127 63.40182787 399.106 2.011 354.975 0.347 0.347 M 4.5546 1.8251 101.312 J112827+633000 0.64204 0.16661 47.7638 0 0 6.12 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T26t09.J112827%2B633000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dkcd2h5p4uplzvdk6&CIRCLE=173.14637126639187+63.401827870677316+0.025
+"VLASS1QLCIR J113842.94+672438.3" 37 174.67891907 67.41065465 220.315 2.677 137.381 0.237 0.237 M 7.2791 4.99 141.337 J113735+673000 1.97642 10306.45771 11.4613 0 0 11.86 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t08.J113735%2B673000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dxpoy2fevt8o4n95n&CIRCLE=174.6789190736092+67.41065465269874+0.025
+"VLASS1QLCIR J113952.55+654801.1" 10 174.96896305 65.80031688 218.144 5.405 75.165 1.065 1.065 M 5.3312 2.6738 118.3297 J113539+653000 19.98692 4534.48975 5.0325 0 0 11.92 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t08.J113539%2B653000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dyjsw3e8aorh5cv21&CIRCLE=174.96896305009557+65.80031687546055+0.025
+"VLASS1QLCIR J113959.41+654745.6" 7 174.99757468 65.79602115 1307.16 15.081 662.195 1.065 1.065 M 10.6834 6.5636 96.0371 J113539+653000 5.15878 4518.71113 11.2242 0 0 9.41 1 https://ws.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/caom2ops/sync?ID=ad%3AVLASS%2FVLASS1.1.ql.T27t08.J113539%2B653000.10.2048.v1.I.iter1.image.pbcor.tt0.subim.fits&RUNID%3Dyjsw3e8aorh5cv21&CIRCLE=174.99757467786674+65.79602114634311+0.025

@@ -1,0 +1,40 @@
+C.D.S.  -  SIMBAD4 rel 1.8  -  2026.10.27CET19:41:08
+
+NVSS J103854+651839
+-------------------
+
+Object NVSS J103854+651839  ---  Rad  ---  OID=@464043   (@@4303,21)  ---  coobox=3368
+
+Coordinates(ICRS,ep=J2000,eq=2000): 10 38 53.330  +65 18 39.07 (Rad ) D [2000 2000 90] 1996AJ....111.1945D
+Coordinates(FK4,ep=B1950,eq=1950): 10 35 27.900  +65 34 16.30 
+Coordinates(Gal,ep=J2000,eq=2000): 142.310820  +46.517578     
+hierarchy counts: #parents=0, #children=0, #siblings=0
+Proper motions: ~ ~ [~ ~ ] ~ ~
+Parallax: ~ [~] ~ ~                  
+Radial Velocity: ~ [~ ~ ] ~ ~                  
+Redshift: ~ [~ ~ ] ~ ~                  
+cz: ~ [~ ~ ] ~ ~                  
+Flux 
+Spectral type: ~ ~ ~
+Morphological type: ~ ~ ~
+Angular size:     ~     ~   ~ (~)  ~ ~
+
+Identifiers (13):
+   TGSSADR J103853.2+651838             VLSSr J103853.1+651837               8C 1035+655                        
+   BWE 1035+6534                        GB6 B1035+6534                       NVSS J103854+651839                
+   TXS 1035+655                         WB 1035+6534                         87GB 103533.9+653447               
+   WN B1035.4+6534                      6C 103527+653405                     7C 103527.60+653415.00             
+   VLSS J1038.8+6518                                                                                            
+
+Bibcodes  1850-2026 () (2):
+  2021A&A...655A..17S  2010A&A...511A..53V                        
+
+Measures (  ):
+
+
+Notes (1) :
+(S) 28-May-2024 - bc    ref:~    obj:GB6 B1035+6534
+    See also \vizier{VIII/104/spectra}{Seq=143016}{Specfind radio flux densities}.
+
+================================================================================
+

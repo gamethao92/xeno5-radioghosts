@@ -1,0 +1,482 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - name: RA_ICRS
+#   unit: deg
+#   datatype: float64
+#   format: '{:15.11f}'
+#   description: Right ascension (ICRS) at Ep=2016.0 (ra)
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_MAIN}
+#   - {width: 15}
+#   - {precision: '11'}
+# - name: DE_ICRS
+#   unit: deg
+#   datatype: float64
+#   format: '{:15.11f}'
+#   description: Declination (ICRS) at Ep=2016.0 (dec)
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_MAIN}
+#   - {width: 15}
+#   - {precision: '11'}
+# - name: Source
+#   datatype: int64
+#   description: Unique source identifier (unique within a particular Data Release) (source_id)
+#   meta: !!omap
+#   - {ucd: ID_MAIN}
+#   - {width: 19}
+# - name: e_RA_ICRS
+#   unit: mas
+#   datatype: float64
+#   format: '{:7.4f}'
+#   description: Standard error of right ascension (ra_error)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 7}
+#   - {precision: '4'}
+# - name: e_DE_ICRS
+#   unit: mas
+#   datatype: float64
+#   format: '{:7.4f}'
+#   description: Standard error of declination (dec_error)
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 7}
+#   - {precision: '4'}
+# - name: Plx
+#   unit: mas
+#   datatype: float64
+#   format: '{:9.4f}'
+#   description: '? Parallax (parallax)'
+#   meta: !!omap
+#   - {ucd: POS_PARLX_TRIG}
+#   - {width: 9}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: e_Plx
+#   unit: mas
+#   datatype: float32
+#   format: '{:7.4f}'
+#   description: '? Standard error of parallax (parallax_error)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 7}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: PM
+#   unit: mas / yr
+#   datatype: float64
+#   format: '{:9.3f}'
+#   description: '? Total proper motion (pm)'
+#   meta: !!omap
+#   - {ucd: POS_EQ_PM}
+#   - {width: 9}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: pmRA
+#   unit: mas / yr
+#   datatype: float64
+#   format: '{:9.3f}'
+#   description: '? Proper motion in right ascension direction, pmRA*cosDE (pmra)'
+#   meta: !!omap
+#   - {ucd: POS_EQ_PMRA}
+#   - {width: 9}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: e_pmRA
+#   unit: mas / yr
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Standard error of proper motion in right ascension direction (pmra_error)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: pmDE
+#   unit: mas / yr
+#   datatype: float64
+#   format: '{:9.3f}'
+#   description: '? Proper motion in declination direction (pmdec)'
+#   meta: !!omap
+#   - {ucd: POS_EQ_PMDEC}
+#   - {width: 9}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: e_pmDE
+#   unit: mas / yr
+#   datatype: float32
+#   format: '{:6.3f}'
+#   description: '? Standard error of proper motion in declination direction (pmdec_error)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 6}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: RUWE
+#   datatype: float64
+#   format: '{:7.3f}'
+#   description: '? Renormalised unit weight error (ruwe)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 7}
+#   - {precision: '3'}
+#   - values: {'null': .nan}
+# - name: FG
+#   datatype: float64
+#   format: '{:16.5f}'
+#   description: '? G-band mean flux (phot_g_mean_flux)'
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_OPTICAL}
+#   - {width: 16}
+#   - {precision: '5'}
+#   - values: {'null': .nan}
+# - name: e_FG
+#   datatype: float32
+#   format: '{:11.4g}'
+#   description: '? Error on G-band mean flux (phot_g_mean_flux_error)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 11}
+#   - {precision: E4}
+#   - values: {'null': .nan}
+# - name: Gmag
+#   unit: mag
+#   datatype: float64
+#   format: '{:9.6f}'
+#   description: '? G-band mean magnitude (phot_g_mean_mag)'
+#   meta: !!omap
+#   - {ucd: PHOT_MAG_OPTICAL}
+#   - {width: 9}
+#   - {precision: '6'}
+#   - values: {'null': .nan}
+# - name: FBP
+#   datatype: float32
+#   format: '{:11.4g}'
+#   description: '? Integrated BP mean flux (phot_bp_mean_flux)'
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_B}
+#   - {width: 11}
+#   - {precision: E4}
+#   - values: {'null': .nan}
+# - name: e_FBP
+#   datatype: float32
+#   format: '{:11.4g}'
+#   description: '? Error on the integrated BP mean flux (phot_bp_mean_flux_error)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 11}
+#   - {precision: E4}
+#   - values: {'null': .nan}
+# - name: BPmag
+#   unit: mag
+#   datatype: float64
+#   format: '{:9.6f}'
+#   description: '? Integrated BP mean magnitude (phot_bp_mean_mag)'
+#   meta: !!omap
+#   - {ucd: PHOT_MAG_B}
+#   - {width: 9}
+#   - {precision: '6'}
+#   - values: {'null': .nan}
+# - name: FRP
+#   datatype: float32
+#   format: '{:11.4g}'
+#   description: '? Integrated RP mean flux (phot_rp_mean_flux)'
+#   meta: !!omap
+#   - {ucd: PHOT_FLUX_R}
+#   - {width: 11}
+#   - {precision: E4}
+#   - values: {'null': .nan}
+# - name: e_FRP
+#   datatype: float32
+#   format: '{:11.4g}'
+#   description: '? Error on the integrated RP mean flux (phot_rp_mean_flux_error)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 11}
+#   - {precision: E4}
+#   - values: {'null': .nan}
+# - name: RPmag
+#   unit: mag
+#   datatype: float64
+#   format: '{:9.6f}'
+#   description: '? Integrated RP mean magnitude (phot_rp_mean_mag)'
+#   meta: !!omap
+#   - {ucd: PHOT_MAG_R}
+#   - {width: 9}
+#   - {precision: '6'}
+#   - values: {'null': .nan}
+# - name: BP-RP
+#   unit: mag
+#   datatype: float64
+#   format: '{:9.6f}'
+#   description: '? BP-RP colour (bp_rp)'
+#   meta: !!omap
+#   - {ucd: PHOT_CI_B-R}
+#   - {width: 9}
+#   - {precision: '6'}
+#   - values: {'null': .nan}
+# - name: RV
+#   unit: km / s
+#   datatype: float64
+#   format: '{:7.2f}'
+#   description: '? Radial velocity (radial_velocity)'
+#   meta: !!omap
+#   - {ucd: VELOC_BARYCENTER}
+#   - {width: 7}
+#   - {precision: '2'}
+#   - values: {'null': .nan}
+# - name: e_RV
+#   unit: km / s
+#   datatype: float32
+#   format: '{:5.2f}'
+#   description: '? Radial velocity error (radial_velocity_error)'
+#   meta: !!omap
+#   - {ucd: ERROR}
+#   - {width: 5}
+#   - {precision: '2'}
+#   - values: {'null': .nan}
+# - name: Vbroad
+#   unit: km / s
+#   datatype: float64
+#   format: '{:8.4f}'
+#   description: '? Spectral line broadening parameter (vbroad)'
+#   meta: !!omap
+#   - {ucd: SPECT_LINE_BROADENING}
+#   - {width: 8}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: GRVSmag
+#   unit: mag
+#   datatype: float64
+#   format: '{:9.6f}'
+#   description: '? Integrated Grvs magnitude (grvs_mag)'
+#   meta: !!omap
+#   - {ucd: PHOT_MAG_OPTICAL}
+#   - {width: 9}
+#   - {precision: '6'}
+#   - values: {'null': .nan}
+# - name: QSO
+#   datatype: uint8
+#   description: '[0/1] Flag indicating the availability of additional information in the QSO candidates table (in_qso_candidates)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: Gal
+#   datatype: uint8
+#   description: '[0/1] Flag indicating the availability of additional information in the galaxy candidates table (in_galaxy_candidates)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: NSS
+#   datatype: uint8
+#   description: '[0/7] Flag indicating the availability of additional information in the various Non-Single Star tables (non_single_star)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: XPcont
+#   datatype: uint8
+#   description: '[0/1] Flag indicating the availability of mean BP/RP spectrum in continuous representation for this source (has_xp_continuous)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: XPsamp
+#   datatype: uint8
+#   description: '[0/1] Flag indicating the availability of mean BP/RP spectrum in sampled form for this source (has_xp_sampled)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: RVS
+#   datatype: uint8
+#   description: '[0/1] Flag indicating the availability of mean RVS spectrum for this source (has_rvs)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: EpochPh
+#   datatype: uint8
+#   description: '[0/1] Flag indicating the availability of epoch photometry for this source (has_epoch_photometry)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: EpochRV
+#   datatype: uint8
+#   description: '[0/1] Flag indicating the availability of epoch radial velocity for this source (has_epoch_rv)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: MCMCGSP
+#   datatype: uint8
+#   description: '[0/1] Flag indicating the availability of GSP-Phot MCMC samples for this source (has_mcmc_gspphot)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: MCMCMSC
+#   datatype: uint8
+#   description: '[0/1] Flag indicating the availability of MSC MCMC samples for this source (has_mcmc_msc)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: And
+#   datatype: uint8
+#   description: '[0/1] Flag indicating that the source is present in the Gaia Andromeda Photometric Survey (GAPS) (in_andromeda_survey)'
+#   meta: !!omap
+#   - {ucd: CODE_MISC}
+#   - {width: 1}
+# - name: Teff
+#   unit: K
+#   datatype: float64
+#   format: '{:7.1f}'
+#   description: '? Effective temperature from GSP-Phot Aeneas best library using BP/RP spectra (teff_gspphot)'
+#   meta: !!omap
+#   - {ucd: PHYS_TEMP_EFFEC}
+#   - {width: 7}
+#   - {precision: '1'}
+#   - values: {'null': .nan}
+# - name: logg
+#   unit: log(cm.s**-2)
+#   datatype: float64
+#   format: '{:7.4f}'
+#   description: '? Surface gravity from GSP-Phot Aeneas best library using BP/RP spectra (logg_gspphot)'
+#   meta: !!omap
+#   - {ucd: PHYS_GRAVITY_SURFACE}
+#   - {width: 7}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: '[Fe/H]'
+#   datatype: float64
+#   format: '{:7.4f}'
+#   description: '? Iron abundance from GSP-Phot Aeneas best library using BP/RP spectra (mh_gspphot)'
+#   meta: !!omap
+#   - {ucd: PHYS_ABUND_FE/H}
+#   - {width: 7}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: Dist
+#   unit: pc
+#   datatype: float64
+#   format: '{:10.4f}'
+#   description: '? Distance from GSP-Phot Aeneas best library using BP/RP spectra (distance_gspphot)'
+#   meta: !!omap
+#   - {ucd: PHYS_DISTANCE_TRUE}
+#   - {width: 10}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: A0
+#   unit: mag
+#   datatype: float64
+#   format: '{:7.4f}'
+#   description: '? Monochromatic extinction A_0 at 547.7nm from GSP-Phot Aeneas best library using BP/RP spectra (azero_gspphot)'
+#   meta: !!omap
+#   - {ucd: PHOT_EXTINCTION_TOTAL}
+#   - {width: 7}
+#   - {precision: '4'}
+#   - values: {'null': .nan}
+# - name: HIP
+#   datatype: int32
+#   description: '? HIP cross-id number, van Leeuwen, Cat. I/311 (hip_original_ext_source_id)'
+#   meta: !!omap
+#   - {ucd: ID_NUMBER}
+#   - {width: 6}
+#   - values: {'null': -2147483648}
+# - name: PS1
+#   datatype: int64
+#   description: '? PS1 cross-id name, Chambers et al., Cat. II/349 (ps1_original_ext_source_id)'
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {width: 18}
+#   - values: {'null': -9223372036854775808}
+# - name: SDSS13
+#   datatype: int64
+#   description: '? SDSS name, Albareti et al., 2017ApJS..233...25A (sdss13_ext_source_id)'
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {width: 19}
+#   - values: {'null': -9223372036854775808}
+# - name: SKYM2
+#   datatype: int32
+#   description: '? SkyMapperDR2 cross-id name, Onken et al., 2019PASA...36...33O (skym2_original_ext_source_id)'
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {width: 9}
+#   - values: {'null': -2147483648}
+# - name: TYC2
+#   datatype: string
+#   description: Tycho-2 cross-id name, Hog et al., Cat. I/259 (tyc2_original_ext_source_id)
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 12*}
+# - name: URAT1
+#   datatype: string
+#   description: URAT1 name, Zacharias et al., Cat. I/329 (urat1_original_ext_source_id)
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 15*}
+# - name: AllWISE
+#   datatype: string
+#   description: ALLWISE cross-id name, Cutri et al., Cat. II/328 (allwise_original_ext_source_id)
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 19*}
+# - name: APASS9
+#   datatype: int32
+#   description: '? APASS9 identification, Henden et al., Cat. II/336 (apass9_original_ext_source_id)'
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {width: 8}
+#   - values: {'null': -2147483648}
+# - name: GSC23
+#   datatype: string
+#   description: GSC2.3 cross-id name, Lasker et al., Cat. I/305 (gsc23_original_ext_source_id)
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 10*}
+# - name: RAVE5
+#   datatype: string
+#   description: RAVE DR5 cross-id name, Kunder et al., Cat. III/279 (rave5_original_ext_source_id)
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 16*}
+# - name: 2MASS
+#   datatype: string
+#   description: 2MASS cross-id name, Cutri et al., Cat. II/246 (twomass_original_ext_source_id)
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 17*}
+# - name: RAVE6
+#   datatype: string
+#   description: RAVE DR6 cross-id name, Steinmetz et al., Cat. III/283 (rave6_original_ext_source_id)
+#   meta: !!omap
+#   - {ucd: ID_CROSSID}
+#   - {_votable_string_dtype: char}
+#   - {_votable_arraysize: 21*}
+# - name: RAJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:15.11f}'
+#   description: Barycentric right ascension (ICRS) at Ep=2000.0 (added by CDS) (ra2000)
+#   meta: !!omap
+#   - {ucd: POS_EQ_RA_OTHER}
+#   - {width: 15}
+#   - {precision: '11'}
+# - name: DEJ2000
+#   unit: deg
+#   datatype: float64
+#   format: '{:15.11f}'
+#   description: Barycentric declination (ICRS) at Ep=2000.0 (added by CDS) (dec2000)
+#   meta: !!omap
+#   - {ucd: POS_EQ_DEC_OTHER}
+#   - {width: 15}
+#   - {precision: '11'}
+# meta: !!omap
+# - {ID: I_355_gaiadr3}
+# - {name: I/355/gaiadr3}
+# - {description: Gaia DR3 source catalog (1811709771 sources)}
+# schema: astropy-2.0
+RA_ICRS DE_ICRS Source e_RA_ICRS e_DE_ICRS Plx e_Plx PM pmRA e_pmRA pmDE e_pmDE RUWE FG e_FG Gmag FBP e_FBP BPmag FRP e_FRP RPmag BP-RP RV e_RV Vbroad GRVSmag QSO Gal NSS XPcont XPsamp RVS EpochPh EpochRV MCMCGSP MCMCMSC And Teff logg [Fe/H] Dist A0 HIP PS1 SDSS13 SKYM2 TYC2 URAT1 AllWISE APASS9 GSC23 RAVE5 2MASS RAVE6 RAJ2000 DEJ2000
+159.72521850655 65.31106363778 1059483632088981504 0.1726 0.1884 -0.1526 0.245 8.818 -4.006 0.225 -7.855 0.241 0.979 299.61014 0.70334 19.495975 122.07 7.2339 20.122055 236.37 6.3733 18.813915 1.30814 "" "" "" "" 0 0 0 0 0 0 0 0 0 0 0 "" "" "" "" "" "" 186371597252094089 1237651538707742938 "" "" "" "" "" N7S6004044 "" "" "" 159.72526113566 65.31109854925
